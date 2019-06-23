@@ -11,8 +11,12 @@ public class UserService {
     UserMapper userMapper;
     public void addUser(){
         User user=new User();
-        user.setId(2);
-        user.setName("李四");
-          userMapper.addUser(user);
+        long star=System.currentTimeMillis();
+        for(int x=1003;x<2000;x++){
+            user.setId(x);
+            user.setName("测试"+x);
+            userMapper.addUser(user);
+        }
+        System.out.println(System.currentTimeMillis()-star);
     }
 }
