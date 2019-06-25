@@ -5,6 +5,9 @@ import com.zxq.redisdemo.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -12,11 +15,9 @@ public class UserService {
     public void addUser(){
         User user=new User();
         long star=System.currentTimeMillis();
-        for(int x=1003;x<2000;x++){
-            user.setId(x);
-            user.setName("测试"+x);
-            userMapper.addUser(user);
-        }
         System.out.println(System.currentTimeMillis()-star);
+    }
+    public List<User> findUsers(){
+      return findUsers();
     }
 }
